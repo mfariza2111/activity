@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">ConstraintLayout</string>
-    <string name="tEmail">Email</string>>
-    <string name="tPassword">Password</string>>
+    <string name="tEmail">Email</string>
+    <string name="tPassword">Password</string>
     <string name="bsSignIn">Signin</string>
+    <string name="tData">DataAnda</string>
+    <string name="tHasilEmail">Ini Hasil Email</string>
+    <string name="tHasilPassword">Hasil Password</string>
 
 </resources>
