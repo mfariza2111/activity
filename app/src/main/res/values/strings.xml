@@ -6,5 +6,12 @@
     <string name="tData">DataAnda</string>
     <string name="tHasilEmail">Ini Hasil Email</string>
     <string name="tHasilPassword">Hasil Password</string>
+    <string name="mDaftar">Pendaftaran</string>
+    <string name="lDaftar">Daftar</string>
+    <string name="enama">Masukkan Nama</string>
+    <string name="eEmail">Masukkan Email</string>
+    <string name="ePass">Masukkan Password</string>
+    <string name="erePass">Masukkan Password lagi</string>
+    <string name="eAlamat">Masukkan Alamat</string>
 
 </resources>
