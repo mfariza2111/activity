@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected( MenuItem item) {
         if (item.getItemId() == R.id.mnDaftar)
         {
             Intent i = new Intent(getApplicationContext(),ActivityPendaftaran.class);
@@ -54,26 +54,35 @@ public class MainActivity extends AppCompatActivity {
                 nama = edemail.getText().toString();
                 password = edpassword.getText().toString();
 
-                if(edemail.getText().toString().equals("admin@mail.com")&&edpassword.getText().toString().equals("123")) {
-                    Toast t = Toast.makeText(getApplicationContext(),
-                            "LOGIN SUKSES || email : " + nama + " password : " + password + "", Toast.LENGTH_LONG);
-                    t.show(); // Jika aplikasi dijalankan dengan benar
+                //mengeset email ynag benar
+                String email = "admin@mail.com";
 
-                    //membuat objek
-                    Bundle b = new Bundle();
-                    // memasukan value dari variable dengan kunci "a"
-                    // dan dimasukan kedalam Bunle
-                    b.putString("a", nama.trim());
-                    //membuat objek inten berpindah ke hasil
-                    Intent i = new Intent(getApplicationContext(),  ActivityHasil.class);
-                    //memasukkan bundle kedalam intent untuk dikirimkan ke ActivtyHasil
-                    i.putExtras(b);
-                    //berpindah ke activytyHasil
-                    startActivity(i);
-                }
-                else{
-                    Toast.makeText((getApplicationContext()), "Username atau Password Anda salah",
-                            Toast.LENGTH_SHORT).show(); //  jika tidak benar maka akan muncul tampilan lain
+                //mengeset password yang benar
+                String pass = "123";
+
+                if (nama.isEmpty() || password.isEmpty()) {
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Email dan password wajib diisi!",
+                            Toast.LENGTH_LONG);
+                    t.show();
+                } else {
+
+                    if (nama.equals(email) && password.equals(pass)) {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Login Sukses", Toast.LENGTH_LONG);
+                        t.show();
+                        Bundle b = new Bundle();
+                        b.putString("a", nama.trim());
+                        b.putString("b", password.trim());
+                        Intent i = new Intent(getApplicationContext(), Home_Activity.class);
+                        i.putExtras(b);
+                        startActivity(i);
+
+                    } else {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Login Gagal", Toast.LENGTH_LONG);
+                        t.show();
+                    }
                 }
             }
         });
